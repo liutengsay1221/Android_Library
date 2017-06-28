@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_cf043c811282f80aa8d9914672636603191d103c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.wang.avi\library\2.1.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e699699fae0092703de1d02b217f43803d0f7e0a">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.wang.avi-library-2.1.3_adbec71bbd9dbb5ec9683845103bc9da459c446c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3158c15bb0ae97575debdb40cfcd8f0f9f244526">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-0.9.0_015499e2c3a48cf2eee77be48e3086d9e4cf34f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_4db1496e7f9fa0379c09d9d7314262daa5f81830.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.5.0\4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83\okhttp-3.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\okhttp-3.5.0_c593a7d2ef038914527204d71747c765ea8d1e88.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_a9f94014761c46d97e0a3cb93a580f2327223a48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_e1bf40d2e220f3dc0ca396ec2cf9a26c6b53f2bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_323f474f8205823286d1ca6b88c597097a404f23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.soundcloud.android.crop\lib_crop\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2013b068d3aecc7d4a96f39d343686bcd4a84a63">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.soundcloud.android.crop-lib_crop-1.0.0_7faadc09bbf7a289867870ad57c6b8b5e5d3445f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\glide-3.7.0_1f3ddf859a86296da03fddcf50d19f29d652df81.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_2e1cead9dccb9a10f3dedaa873b2f08077a086bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_a0a2fe11d8a01ff1e5da629a15744482af03a4dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\libs\jpush-android_v3.0.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cc50cc7009c634f3222609dae2d60d5ad888015a">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\jpush-android_v3.0.6_0868651cbe9a8c5d84335bff1948f45f326013e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\design\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.0.0_5fec7c0624779a81a9ee93bcd32ee79c3005fb33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_758415764b02bad3f34b9c652e7ba27797253265.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.darsh.multipleimageselect\multipleimageselect\1.0.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="91a335dab6fcecb5f15f9f19e960e02bb3e699aa">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.darsh.multipleimageselect-multipleimageselect-1.0.4_da05be85141789e93f32e3137ea10fb0022d8704.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4ee95617ab850030c51486d02bc9d207b14419c6">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-0.9.0_286070a430998ab0d88f9df82e8bd37840c1005a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.jph.takephoto\takephoto_library\4.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="89431f8e8b6d5d187364cef8fcdc690ba0ed28d2">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.jph.takephoto-takephoto_library-4.0.3_601e01fd170d173efc74d537a39dd5f9210f315a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_093ccd3386c36d2d8c6e26d58239b5b39abc6dd8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\libs\jcore-android_v1.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e872ea5454bca71af461e037dd07c4ca9e73dcf4">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\jcore-android_v1.1.3_1a429d1446fac3cce2efafffe080cc7519165d8e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.tbruyelle.rxpermissions\rxpermissions\0.9.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="80c22c5f8ef176f5afde9dcbf718ea266a74847a">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.tbruyelle.rxpermissions-rxpermissions-0.9.4_0e515cff48040a5381bd41e7a54f3895c4e6de92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="57528b5deee77bfa2188fc279fd45066366f17f5">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-0.9.0_9d2e5337d3af0b73e59319b0ba1503e91cb5d7c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.2.1\4e4cfa4adc74521d5966799fa5ab70b733552f68\rxjava-1.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4e4cfa4adc74521d5966799fa5ab70b733552f68">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\rxjava-1.2.1_aa891a92fd7005674dbfb16a988b401dae763c6b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.0.0_09064e151c71c8ce65bd61adc2c996a45fab69e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.zzhoujay.richtext\richtext\2.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fb0d6e3323eb929905c51f1e9ced1d1a149ded45">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.zzhoujay.richtext-richtext-2.4.0_57b2511165a5e593d51035804d90c47ee8ec3c75.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.0.1\cabf146d220dcd70a2972166cd1bfae200b97eff\adapter-rxjava-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cabf146d220dcd70a2972166cd1bfae200b97eff">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.0.1_354c7e84fe06da298f398c2d0eed9015e23b6f53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.0_8853058f3569ba6c8635b751427f4138bbb5ca44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.11.0\840897fcd7223a8143f1d9b6f69714e7be34fd50\okio-1.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\okio-1.11.0_893d7cba6fd833c845f42c6194f7ff7a73716aa7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="39bd9f893c75eac9e76559cc4e96af6e417afdc5">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-0.9.0_0e73167ce3d8a94dd59121ebda45f42d8b0b8b3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android-sdk\android-sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_0c7f9f84677974325df24c6facb4644e4a9402d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.zzhoujay.markdown\markdown\1.0.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="88b7823c77c25884f8057833b4216bdaaa25ca94">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.zzhoujay.markdown-markdown-1.0.4_cf5e57ca9d183d6a61df664c85b964de22fd9340.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\me.shaohui.advancedluban\library\1.3.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="203f86b303ba8cf1473a5495f94121466af023b0">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\me.shaohui.advancedluban-library-1.3.2_b32f725c392b73241b27ecf162fbe303131c6b27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.1\381fc1096ba65040d8e80ea43b2e1d9bad02345e\logging-interceptor-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.4.1_16ea2c5adabd180da0b0709521ed490e4e49b95b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.2.1_01e265d3f0d8d50f66fbd77252f48a0fd11987dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\gson-2.7_2e85dbf641c4a16c73925139bd4ff50ebb0450dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_fc6d109c83c05cddded4b5ea732ed5dd7c938086.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_02cdaa5f093e78b272a8b951b62057cb62740b8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\eventbus-3.0.0_338198e230e883acd6c9c82ca46ba5fc3096755c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\Lottery\library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bb8cb89b3da6d28aed529a6d8a842bf30774edcf">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\Lottery-library-unspecified_5ee6bdfc8452c54de6b0c2b4d5de703769ca2db0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4_a27a8f82ac0b46c0541b7fd779ecc0cc456b9053.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Lottery\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ca51025f4a58fc7fb6cfaa85e7d09b7ae47e6187">
+        <dex dex="F:\Lottery\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-0.9.0_7b8d4875dc906666bd0e80609bc0a86e1b452d8b.jar" />
+    </item>
+
+</items>
