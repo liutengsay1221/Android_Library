@@ -17,19 +17,22 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 
 import okhttp3.Cache;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Retrofit Manager
  * <p>
  * 支持Https, 需要使用之前初始化(在App初始化的地方设置, 例如Application#onCreate方法中):
- * RetrofitManager.getInstance().initCertificates(InputStream... cers);
+ *      RetrofitManager.getInstance().initCertificates(InputStream... cers);
  * 后续设置无效
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/9/27 17:15]
  */
 
 public class RetrofitManager {
@@ -38,6 +41,8 @@ public class RetrofitManager {
     static RetrofitManager sInstance; // single instance
 
     OkHttpClient client; // default client
+
+    Interceptor networkInterceptor;
 
     /**
      * Private constructor
@@ -67,7 +72,8 @@ public class RetrofitManager {
      * @param baseUrl
      * @return
      */
-    public synchronized Retrofit getRetrofit(String baseUrl) {
+    public synchronized Retrofit getRetrofit(String baseUrl, Interceptor networkInterceptor) {
+        this.networkInterceptor = networkInterceptor;
         if (client == null) {
             client = buildClient();
         }
@@ -77,7 +83,7 @@ public class RetrofitManager {
             Retrofit.Builder builder = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .client(client)
-                    .addConverterFactory(GsonConverterFactoryPlus.create())
+                    .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create());
             retrofit = builder.build();
             retrofitPool.put(baseUrl, retrofit);
@@ -96,8 +102,8 @@ public class RetrofitManager {
      */
     public void initCertificates(InputStream... cers) {
         try {
-            trustManager = SSLFactory.getX509TrustManager(cers);
-            sslFactory = SSLFactory.build(trustManager);
+            trustManager = SSLUtils.getX509TrustManager(cers);
+            sslFactory = SSLUtils.build(trustManager);
 
             client = buildClient();
         } catch (CertificateException e) {
@@ -121,8 +127,8 @@ public class RetrofitManager {
      */
     public void initCertificates(InputStream bks, String pwd, InputStream... cers) {
         try {
-            trustManager = SSLFactory.getX509TrustManager(cers);
-            sslFactory = SSLFactory.build(bks, pwd, trustManager);
+            trustManager = SSLUtils.getX509TrustManager(cers);
+            sslFactory = SSLUtils.build(bks, pwd, trustManager);
 
             client = buildClient();
         } catch (CertificateException e) {
@@ -143,7 +149,12 @@ public class RetrofitManager {
      */
     private OkHttpClient buildClient() {
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        if (BuildConfig.DEBUG) {
+            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        } else {
+            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
+        }
+
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor) // log interceptor
                 .retryOnConnectionFailure(true) // retry when connect failure
@@ -156,7 +167,9 @@ public class RetrofitManager {
         if (sslFactory != null) {
             builder.sslSocketFactory(sslFactory, trustManager);
         }
+        if (networkInterceptor != null) {
+            builder.addNetworkInterceptor(networkInterceptor);
+        }
         return builder.build();
     }
-
 }

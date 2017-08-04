@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 维护Logic的订阅者,以及提供取消订阅等方法
  *
- * @author liuteng
+ * @version [Android-BaseLine, 16/9/3 11:07]
  */
 public class EventLogic {
     // 存储所有的订阅者

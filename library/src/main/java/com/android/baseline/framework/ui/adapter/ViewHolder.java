@@ -27,8 +27,6 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import org.w3c.dom.Text;
-
 /**
  * 通用ViewHolder
  *
@@ -103,14 +101,14 @@ public class ViewHolder extends RecyclerView.ViewHolder {
      * @param viewId
      * @return
      */
-    public ViewHolder setCompoundDrawables(int viewId,@Nullable Drawable left, @Nullable Drawable top,
-                              @Nullable Drawable right, @Nullable Drawable bottom) {
+    public ViewHolder setCompoundDrawables(int viewId, @Nullable Drawable left, @Nullable Drawable top,
+                                           @Nullable Drawable right, @Nullable Drawable bottom) {
         TextView tv = getView(viewId);
         tv.setCompoundDrawables(left,top,right,bottom);
         return this;
     }
 
-    public ViewHolder setCompoundPadding(int viewId, int leftPadding,int topPadding,int rightPadding, int bottomPadding) {
+    public ViewHolder setCompoundPadding(int viewId, int leftPadding, int topPadding, int rightPadding, int bottomPadding) {
         TextView tv = getView(viewId);
         tv.setPadding(leftPadding,topPadding,rightPadding,bottomPadding);
         return this;
@@ -185,7 +183,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         if( !TextUtils.isEmpty(imgUrl)){
             view.setImageURI(Uri.parse(imgUrl));
         }else{
-            view.setImageURI(null);
+            view.setImageURI("");
         }
         return this;
     }

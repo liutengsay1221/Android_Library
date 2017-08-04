@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\Lottery\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-land\\values-land.xml",
+        "outputFile": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-land/values-land.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\values-land\\values-land.xml",
+                    "file": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\values-land\\values-land.xml",
+                    "file": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 255
                 },
                 "from": {
-                    "file": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\values-land\\values-land.xml",
+                    "file": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\values-land\\values-land.xml",
+                    "file": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -83,31 +83,12 @@
                     "startLine": 6,
                     "startColumn": 4,
                     "startOffset": 328,
-                    "endColumn": 47,
-                    "endOffset": 371
-                },
-                "from": {
-                    "file": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.soundcloud.android.crop\\lib_crop\\1.0.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 47,
-                        "endOffset": 98
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 376,
-                    "endLine": 10,
+                    "endLine": 9,
                     "endColumn": 12,
-                    "endOffset": 553
+                    "endOffset": 505
                 },
                 "from": {
-                    "file": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.0\\res\\values-land\\values-land.xml",
+                    "file": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/values-land/values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

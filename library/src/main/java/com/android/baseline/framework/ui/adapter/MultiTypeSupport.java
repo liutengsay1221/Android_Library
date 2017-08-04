@@ -5,7 +5,8 @@ import android.support.annotation.LayoutRes;
 /**
  * 多样式支持
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/9/19 14:11]
  */
 public abstract class MultiTypeSupport<T> {
     /**
@@ -14,7 +15,7 @@ public abstract class MultiTypeSupport<T> {
      * @param itemType
      * @return
      */
-    public abstract int getLayoutId(int itemType);
+    public abstract int getLayoutId(@LayoutRes int itemType);
 
     /**
      * 返回不同itemType

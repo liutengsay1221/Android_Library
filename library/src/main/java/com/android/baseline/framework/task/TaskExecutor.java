@@ -12,7 +12,8 @@ import rx.schedulers.Schedulers;
 /**
  * 异步任务执行器封装,使用RxAndroid实现
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/8/17 13:43]
  */
 public class TaskExecutor {
     private static TaskExecutor sInstance;

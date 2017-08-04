@@ -5,7 +5,8 @@ import java.util.List;
 /**
  * Adapter Interface
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/9/19 15:48]
  */
 public interface IAdapter<T> {
 

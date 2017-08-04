@@ -2,6 +2,7 @@ package com.android.baseline.framework.ui.view;
 
 import android.content.Context;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +17,8 @@ import org.greenrobot.eventbus.EventBus;
 /**
  * 加载数据View, 提供加载提示、失败点击重试等功能
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2015-1-28]
  */
 public class LoadingView extends RelativeLayout implements OnClickListener {
     private ProgressBar progressBar;
@@ -173,6 +175,9 @@ public class LoadingView extends RelativeLayout implements OnClickListener {
      * @param errorDesc 描述信息
      */
     public void onFailure(String errorDesc) {
+        if (TextUtils.isEmpty(errorDesc)) {
+            errorDesc = getResources().getString(R.string.loading_failure);
+        }
         isLoading = false;
         progressBar.setVisibility(View.GONE);
         tipTxt.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.loading_error_tip), null, null, null);

@@ -4,13 +4,13 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.android.baseline.R;
 import com.android.baseline.framework.logic.EventLogic;
 import com.android.baseline.framework.task.Task;
 import com.android.baseline.framework.ui.activity.annotations.ViewUtils;
+import com.android.baseline.framework.ui.activity.base.helper.KeyboardUtil;
 import com.android.baseline.framework.ui.activity.base.helper.LogicHelper;
 import com.android.baseline.framework.ui.activity.base.helper.TaskHelper;
-import com.android.baseline.framework.ui.activity.base.helper.ToolBarHelper;
+import com.android.baseline.framework.ui.activity.base.helper.ContentViewHelper;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -18,17 +18,17 @@ import org.greenrobot.eventbus.ThreadMode;
 /**
  * 基类Activity, 提供业务逻辑的处理和深层的UI处理
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-9-15]
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    public Toolbar toolbar;
+    private Toolbar toolbar;
     private boolean isDestroyed; // Activity是否已销毁
-    private ToolBarHelper mToolBarHelper;
-    private int isVisible;
 
+    KeyboardUtil keyboardUtil;
     @Override
     public void setContentView(int layoutResID) {
-        mToolBarHelper = new ToolBarHelper(this, layoutResID, isToolBarVisible(), getToolBarColor(), isFitsSystemWindows());
+        ContentViewHelper mToolBarHelper = new ContentViewHelper(this, layoutResID, defaultTitleBarVisible());
         toolbar = mToolBarHelper.getToolBar();
         super.setContentView(mToolBarHelper.getContentView());
         /*把 toolbar 设置到Activity 中*/
@@ -37,34 +37,21 @@ public abstract class BaseActivity extends AppCompatActivity {
         onCreateCustomToolBar(toolbar);
         /*View注解*/
         ViewUtils.inject(this);
+
         afterSetContentView();
-    }
 
-
-    /**
-     * ToolBar颜色
-     *
-     * @return
-     */
-    protected int getToolBarColor() {
-        return getResources().getColor(R.color.primary);
+        // 解决 fitSystemWindow、adjustResize、FLAG_TRANSLUCENT_STATUS 一起使用的bug
+        keyboardUtil = new KeyboardUtil(this, findViewById(android.R.id.content));
+        //enable it
+        keyboardUtil.enable();
     }
 
     /**
-     * ToolBar隐藏与显示
+     * 默认标题栏是否可见
      *
      * @return
      */
-    protected boolean isToolBarVisible() {
-        return true;
-    }
-
-    /**
-     * ToolBar隐藏与显示
-     *
-     * @return
-     */
-    protected boolean isFitsSystemWindows() {
+    protected boolean defaultTitleBarVisible() {
         return true;
     }
 
@@ -116,6 +103,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         isDestroyed = true;
         logicHelper.unregistAll();
         taskHelper.unregistAll();
+        keyboardUtil.disable();
     }
 
     /**

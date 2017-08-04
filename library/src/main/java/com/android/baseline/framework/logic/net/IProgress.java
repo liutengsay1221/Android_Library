@@ -3,7 +3,8 @@ package com.android.baseline.framework.logic.net;
 /**
  * 文件下载进度
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/9/23 10:11]
  */
 public interface IProgress {
     /**

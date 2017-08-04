@@ -9,45 +9,21 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
+import android.text.TextUtils;
 
 import com.android.baseline.AppDroid;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.IOException;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 
 /**
  * 基础工具类 [尽量减少类似Util的类存在]
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-8-29]
  */
 public class APKUtil {
-    //token过期错误码
-    public static String TOKEN_GONE = "30001"; //令牌不存在
-    public static String TOKEN_TIMEOUT_CODE = "30002"; //重复登陆或者过期
-
-//    public static String IP = "http://172.16.0.206";
-//    public static String PORT = ":6060";
-
-//    public static String IP = "http://121.40.182.24";
-//    public static String PORT = ":8989";
-
-//    public static String IP = "http://172.16.0.24";
-//    public static String PORT = ":8066";
-//
-//    public static String IP = "http://115.29.161.65";
-//    public static String PORT = ":6060";
-
-    public static String IP = "http://101.37.75.115";
-//    public static String PORT = ":8080";versioncode=3 之前使用
-    public static String PORT = ":8066";// versioncode=4 使用
-
-    public static String IP_PORT = IP + PORT;
-    public static String BASE_URL = IP_PORT + "/api/";
-    public static String SHARE_URL = IP_PORT + "/share.html";
     /**
      * 获得版本号
      *
@@ -78,6 +54,36 @@ public class APKUtil {
             e.printStackTrace();
         }
         return verName;
+    }
+
+    /**
+     * 根据版本号比较，版本号格式：数字.数字.数字
+     *
+     * @param innerVersion  app内部版本号
+     * @param newestVersion 服务器版本号
+     * @return true innerVersion < newestVersion
+     */
+    public static boolean compareVerName(String innerVersion, String newestVersion) {
+        if (TextUtils.isEmpty(innerVersion) || TextUtils.isEmpty(newestVersion)) {
+            return false;
+        }
+        try {
+            String[] inners = innerVersion.split(".");
+            String[] newests = newestVersion.split(".");
+            for (int i = 0; i < newests.length; i++) {
+                int newest = Integer.parseInt(newests[i]);
+                int inner = 0;
+                if (i < inners.length) {
+                    inner = Integer.parseInt(inners[i]);
+                }
+                if (newest > inner) {
+                    return true;
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 
     /**
@@ -183,7 +189,7 @@ public class APKUtil {
     }
 
     /**
-     * 把字符串转换成md5格式
+     * 字符串md5
      *
      * @param s
      * @return
@@ -215,15 +221,19 @@ public class APKUtil {
     }
 
     /**
-     * 检测Sdcard是否存在
+     * url 中文编码转换
      *
+     * @param url
      * @return
      */
-    public static boolean isExitsSdcard() {
-        if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
-            return true;
-        else
-            return false;
+    public static String UrlEncode(String url) {
+        if (url != null) {
+            String urlBegin = url.substring(0, url.lastIndexOf("/") + 1);
+            String urlEnd = url.substring(url.lastIndexOf("/") + 1, url.length());
+            String str = urlBegin + URLEncoder.encode(urlEnd).replace("+", "%20");
+            return str;
+        } else {
+            return null;
+        }
     }
-
 }

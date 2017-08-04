@@ -1,55 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr format="dimension" name="borderRadius"/>
-    <attr format="reference" name="src"/>
-    <attr name="type">
-        <enum name="circle" value="0"/>
-        <enum name="round" value="1"/>
-    </attr>
-    <color name="primary">#25D2CE</color>
-    <declare-styleable name="CustomImageView"><attr name="borderRadius"/><attr name="type"/><attr name="src"/></declare-styleable>
+    <color name="primary">#A60000</color>
+    <dimen name="title_bar_height">45dp</dimen>
     <item name="onLoading" type="id"/>
-    <string name="app_name">Android-BaseLine</string>
+    <string name="app_name">CC英语</string>
     <string name="loading_failure">点击屏幕, 重新加载</string>
     <string name="loading_text">正在加载, 请稍候...</string>
+    <string name="network_error">网络连接异常，请检查网络设置</string>
+    <string name="no_data">空空如也~</string>
+    <string name="nomore_data">没有更多数据了~</string>
     <string name="permission_desc_text">需要%1$s的权限, 但此权限已被禁止, 你可以到设置中更改</string>
     <string name="requesting_failure">请求失败, 请稍后重试</string>
     <string name="settings">去设置</string>
-    <style name="AVLoadingIndicatorView">
-        <item name="minWidth">48dip</item>
-        <item name="maxWidth">48dip</item>
-        <item name="minHeight">48dip</item>
-        <item name="maxHeight">48dip</item>
-        <item name="indicatorName">BallPulseIndicator</item>
-    </style>
-    <style name="AVLoadingIndicatorView.Large">
-        <item name="minWidth">76dip</item>
-        <item name="maxWidth">76dip</item>
-        <item name="minHeight">76dip</item>
-        <item name="maxHeight">76dip</item>
-        <item name="indicatorName">BallPulseIndicator</item>
-    </style>
-    <style name="AVLoadingIndicatorView.Small">
-        <item name="minWidth">24dip</item>
-        <item name="maxWidth">24dip</item>
-        <item name="minHeight">24dip</item>
-        <item name="maxHeight">24dip</item>
-        <item name="indicatorName">BallPulseIndicator</item>
-    </style>
-    <style name="AVLoadingIndicatorView.Small.Small">
-        <item name="minWidth">15dip</item>
-        <item name="maxWidth">15dip</item>
-        <item name="minHeight">15dip</item>
-        <item name="maxHeight">15dip</item>
-        <item name="indicatorName">BallPulseIndicator</item>
-    </style>
-    <style name="ActivityTransparentTheme" parent="@style/BaseAppTheme">
+    <style name="ActivityTransparentTheme" parent="@style/AppTheme">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
-    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    </style>
+    <style name="AppTheme" parent="@style/BaseAppTheme"/>
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
     <style name="CustomDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>

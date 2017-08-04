@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -14,18 +15,18 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.baseline.AppDroid;
 import com.android.baseline.R;
 import com.android.baseline.framework.logic.InfoResult;
 import com.android.baseline.framework.ui.activity.base.BaseActivity;
 import com.android.baseline.framework.ui.activity.base.UIInterface;
-import com.android.baseline.framework.ui.view.LoadingView;
-import com.android.baseline.framework.ui.view.ToastCommom;
-import com.android.baseline.util.APKUtil;
+import com.android.baseline.framework.ui.adapter.page.PageWrapper;
 import com.android.baseline.framework.ui.view.CustomDialog;
+import com.android.baseline.framework.ui.view.LoadingView;
+import com.android.baseline.util.APKUtil;
 import com.jph.takephoto.app.TakePhoto;
-import com.jph.takephoto.app.TakePhotoActivity;
 import com.jph.takephoto.app.TakePhotoImpl;
 import com.jph.takephoto.model.InvokeParam;
 import com.jph.takephoto.model.TContextWrap;
@@ -33,19 +34,21 @@ import com.jph.takephoto.model.TResult;
 import com.jph.takephoto.permission.InvokeListener;
 import com.jph.takephoto.permission.PermissionManager;
 import com.jph.takephoto.permission.TakePhotoInvocationHandler;
-import com.wang.avi.AVLoadingIndicatorView;
+
+import java.util.List;
 
 /**
  * 基类Activity [主要提供对话框、进度条和其他有关UI才做相关的功能]
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-9-15]
  */
 public class BasicActivity extends BaseActivity implements UIInterface, TakePhoto.TakeResultListener, InvokeListener {
     private final String TAG = "BasicActivity";
     /**
      * 基类Toast
      */
-    private static ToastCommom mToast;
+    private static Toast mToast;
     protected boolean isPaused;
     protected boolean mIsNeedRefresh;
 
@@ -69,7 +72,6 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     protected Button rightBtn;
     private TakePhoto takePhoto;
     private InvokeParam invokeParam;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getTakePhoto().onCreate(savedInstanceState);
@@ -84,26 +86,37 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
         // add custom title bar here
         mInflater = LayoutInflater.from(this);
 
-        // 通用标题栏
-        View commonTitle = mInflater.inflate(R.layout.layout_common_title, toolbar);
-        llLeft = commonTitle.findViewById(R.id.ll_left);
-        leftBtn = (Button) commonTitle.findViewById(R.id.title_left_btn);
-        titleTxt = (TextView) commonTitle.findViewById(R.id.title_txt);
-        subTitleTxt = (TextView) commonTitle.findViewById(R.id.sub_title_txt);
-        llRight = commonTitle.findViewById(R.id.ll_right);
-        rightBtn = (Button) commonTitle.findViewById(R.id.title_right_btn);
-        leftBtn.setClickable(false);
-        rightBtn.setClickable(false);
-        llLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
+        if (defaultTitleBarVisible()) {
+            if (getCustomTitleLayout() != -1) {
+                // 使用用户自定义的标题布局
+                mInflater.inflate(getCustomTitleLayout(), toolbar);
+            } else {
+                // 通用标题栏
+                View commonTitle = mInflater.inflate(R.layout.layout_common_title, toolbar);
+                llLeft = commonTitle.findViewById(R.id.ll_left);
+                leftBtn = (Button) commonTitle.findViewById(R.id.title_left_btn);
+                titleTxt = (TextView) commonTitle.findViewById(R.id.title_txt);
+                subTitleTxt = (TextView) commonTitle.findViewById(R.id.sub_title_txt);
+                llRight = commonTitle.findViewById(R.id.ll_right);
+                rightBtn = (Button) commonTitle.findViewById(R.id.title_right_btn);
+                setLeftFinish(null);
             }
-        });
+        }
+    }
+
+    /**
+     * 返回用户自定义的标题布局
+     *
+     * @return
+     */
+    protected
+    @LayoutRes
+    int getCustomTitleLayout() {
+        return -1;
     }
 
     protected void setLeftText(@StringRes int left) {
-        leftBtn.setVisibility(View.VISIBLE);
+        llLeft.setVisibility(View.VISIBLE);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) leftBtn.getLayoutParams();
         layoutParams.width = LinearLayout.LayoutParams.WRAP_CONTENT;
         layoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -113,7 +126,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void setLeftDrawable(@DrawableRes int left) {
-        leftBtn.setVisibility(View.VISIBLE);
+        llLeft.setVisibility(View.VISIBLE);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) leftBtn.getLayoutParams();
         layoutParams.width = APKUtil.dip2px(this, 20);
         layoutParams.height = APKUtil.dip2px(this, 20);
@@ -123,7 +136,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void setLeftDrawable(@DrawableRes int left, int wDp, int hDp) {
-        leftBtn.setVisibility(View.VISIBLE);
+        llLeft.setVisibility(View.VISIBLE);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) leftBtn.getLayoutParams();
         layoutParams.width = wDp;
         layoutParams.height = hDp;
@@ -133,7 +146,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void hideLeft() {
-        leftBtn.setVisibility(View.INVISIBLE);
+        llLeft.setVisibility(View.INVISIBLE);
     }
 
     protected void setLeftListener(View.OnClickListener listener) {
@@ -158,7 +171,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void setRightText(@StringRes int right) {
-        rightBtn.setVisibility(View.VISIBLE);
+        llRight.setVisibility(View.VISIBLE);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) rightBtn.getLayoutParams();
         layoutParams.width = LinearLayout.LayoutParams.WRAP_CONTENT;
         layoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -168,7 +181,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void setRightDrawable(@DrawableRes int right) {
-        rightBtn.setVisibility(View.VISIBLE);
+        llRight.setVisibility(View.VISIBLE);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) rightBtn.getLayoutParams();
         layoutParams.width = APKUtil.dip2px(this, 20);
         layoutParams.height = APKUtil.dip2px(this, 20);
@@ -178,7 +191,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void setRightDrawable(@DrawableRes int right, int wDp, int hDp) {
-        rightBtn.setVisibility(View.VISIBLE);
+        llRight.setVisibility(View.VISIBLE);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) rightBtn.getLayoutParams();
         layoutParams.width = wDp;
         layoutParams.height = hDp;
@@ -188,7 +201,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void hideRight() {
-        rightBtn.setVisibility(View.INVISIBLE);
+        llRight.setVisibility(View.INVISIBLE);
     }
 
     protected void setRightListener(View.OnClickListener listener) {
@@ -201,6 +214,10 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     }
 
     protected void setTitleText(@StringRes int title) {
+        setTitleText(getString(title));
+    }
+
+    protected void setTitleText(String title) {
         titleTxt.setText(title);
     }
 
@@ -221,9 +238,7 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
      * @param rightVisible 右侧按钮是否可见
      */
     protected void setTitleBar(boolean leftVisible, @StringRes int resId, boolean rightVisible) {
-        leftBtn.setVisibility(leftVisible ? View.VISIBLE : View.INVISIBLE);
-        titleTxt.setText(resId);
-        rightBtn.setVisibility(rightVisible ? View.VISIBLE : View.INVISIBLE);
+        setTitleBar(leftVisible, getString(resId), rightVisible);
     }
 
     /**
@@ -234,9 +249,9 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
      * @param rightVisible 右侧按钮是否可见
      */
     protected void setTitleBar(boolean leftVisible, String title, boolean rightVisible) {
-        leftBtn.setVisibility(leftVisible ? View.VISIBLE : View.INVISIBLE);
+        llLeft.setVisibility(leftVisible ? View.VISIBLE : View.INVISIBLE);
         titleTxt.setText(title);
-        rightBtn.setVisibility(rightVisible ? View.VISIBLE : View.INVISIBLE);
+        llRight.setVisibility(rightVisible ? View.VISIBLE : View.INVISIBLE);
     }
 
     protected void afterSetContentView() {
@@ -337,16 +352,36 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
      *
      * @param message 字符串
      */
-    public void showToast(String message) {
+    public void showToast(CharSequence message) {
         if (isPaused) {
             return;
         }
         if (mToast == null) {
-            mToast = ToastCommom.createToastConfig();
+            mToast = Toast.makeText(getApplicationContext(),
+                    message,
+                    Toast.LENGTH_SHORT);
+        } else {
+            mToast.setText(message);
         }
-        mToast.ToastShow(this, message);
+        mToast.show();
     }
 
+    /**
+     * 分页查询空数据提示语
+     *
+     * @param pageWrapper
+     * @param source
+     * @param <T>
+     */
+    public <T> void showPagingEmptyToast(PageWrapper pageWrapper, List<T> source) {
+        if (source == null || source.size() == 0) {
+            if (!pageWrapper.isFirstPage()) {
+                showToast(getString(R.string.nomore_data));
+            } else {
+                showToast(getString(R.string.no_data));
+            }
+        }
+    }
 
     public void showProgress(String message) {
         showProgress(message, true);
@@ -354,7 +389,6 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
 
     CustomDialog customDialog;
     TextView tipTextView;
-    AVLoadingIndicatorView loadingIndicatorView;
 
     public void showProgress(String message, boolean cancelable) {
         if (customDialog == null) {
@@ -367,9 +401,11 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
         }
         customDialog.getDialog().setCancelable(cancelable);
         customDialog.show();
-        loadingIndicatorView = (AVLoadingIndicatorView) customDialog.findViewById(R.id.avi);
-        loadingIndicatorView.show();
-        tipTextView = (TextView) customDialog.findViewById(R.id.tipTextView);
+
+        if (tipTextView == null) {
+            tipTextView = (TextView) customDialog.findViewById(R.id.tipTextView);
+        }
+
         if (!TextUtils.isEmpty(message)) {
             tipTextView.setText(message);
         } else {
@@ -380,7 +416,6 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
     public void hideProgress() {
         if (customDialog != null) {
             customDialog.dismiss();
-            loadingIndicatorView.hide();
         }
     }
 
@@ -415,12 +450,6 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
             if (result.isSuccess()) {
                 if (!TextUtils.isEmpty(successTip)) {
                     showToast(successTip);
-                }
-                if (result.getCode().equals("201")) {
-                    showToast("暂无数据");
-                }
-                if (result.getCode().equals("202")) {
-                    showToast("没有更多数据");
                 }
                 return true;
             } else {
@@ -511,7 +540,6 @@ public class BasicActivity extends BaseActivity implements UIInterface, TakePhot
         hideProgress();
         AppDroid.getInstance().uiStateHelper.removeActivity(this);
     }
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         getTakePhoto().onSaveInstanceState(outState);

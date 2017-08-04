@@ -1,10 +1,10 @@
 [
     {
-        "merged": "F:\\Lottery\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/res/merged/androidTest/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "F:\\Lottery\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/res/merged/androidTest/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     }
 ]

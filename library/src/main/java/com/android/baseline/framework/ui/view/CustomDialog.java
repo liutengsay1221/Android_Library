@@ -18,7 +18,8 @@ import java.util.Set;
 
 /**
  * 自定义对话框
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 17/1/3 22:18]
  */
 public class CustomDialog {
     private Context context;

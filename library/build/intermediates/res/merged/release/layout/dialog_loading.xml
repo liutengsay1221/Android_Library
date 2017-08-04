@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/loading_dialog_bg"
     android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@drawable/loading_dialog_bg">
 
-    <com.wang.avi.AVLoadingIndicatorView
-        android:id="@+id/avi"
-        style="@style/AVLoadingIndicatorView.Small"
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:indicatorColor="@color/primary"
-        app:indicatorName="BallTrianglePathIndicator" />
+        style="?android:attr/progressBarStyleSmall" />
 
     <TextView
         android:id="@+id/tipTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="3dp"
+        android:layout_marginLeft="10dp"
         android:textColor="@android:color/white"
-        android:textSize="14sp" />
+        android:text="数据加载中..." />
 </LinearLayout>

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\Lottery\\library\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v19\\values-v19.xml",
+        "outputFile": "/Users/liuteng/Desktop/D/workspace-xixiwo/TestTinkerDemo/library/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v19/values-v19.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,33 @@
                     "endOffset": 398
                 },
                 "from": {
-                    "file": "F:\\Lottery\\library\\src\\main\\res\\values-v19\\styles.xml",
+                    "file": "/Users/liuteng/Desktop/D/workspace-xixiwo/TestTinkerDemo/library/src/main/res/values-v19/styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 137,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 480
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v19/values-v19.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 7,
+                    "endColumn": 12,
+                    "endOffset": 398
+                },
+                "from": {
+                    "file": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/src/main/res/values-v19/styles.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,

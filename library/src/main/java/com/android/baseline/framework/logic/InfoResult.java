@@ -1,13 +1,14 @@
 package com.android.baseline.framework.logic;
 
-import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 网络请求返回数据
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2013-7-23]
  */
 public class InfoResult<T> implements Serializable {
     // 成功Code
@@ -31,8 +32,17 @@ public class InfoResult<T> implements Serializable {
     public InfoResult() {
     }
 
+    public <R> List<R> getRawListData() {
+        if (data != null && data instanceof ListEntry) {
+            ListEntry listEntry = (ListEntry)data;
+            return  listEntry.getRows();
+        } else {
+            return null;
+        }
+    }
+
     public boolean isSuccess() {
-        return DEFAULT_SUCCESS_CODE.equals(code) || "201".equals(code)||"202".equals(code);
+        return DEFAULT_SUCCESS_CODE.equals(code);
     }
 
     public String getCode() {

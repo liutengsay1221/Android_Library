@@ -1,14 +1,26 @@
 [
     {
-        "merged": "F:\\Lottery\\library\\build\\intermediates\\res\\merged\\release\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "F:\\Lottery\\library\\build\\intermediates\\res\\merged\\release\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.0\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "/Users/liuteng/Desktop/D/workspace-xixiwo/TestTinkerDemo/library/build/intermediates/res/merged/release/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/liuteng/.android/build-cache/1e87f1f268729c31b1e727021bd3446179eb7619/output/res/anim-v21/design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "F:\\Lottery\\library\\build\\intermediates\\res\\merged\\release\\anim-v21\\design_appbar_state_list_animator.xml",
-        "source": "F:\\Lottery\\library\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.0\\res\\anim-v21\\design_appbar_state_list_animator.xml"
+        "merged": "/Users/liuteng/Desktop/D/workspace-xixiwo/TestTinkerDemo/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/liuteng/.android/build-cache/1e87f1f268729c31b1e727021bd3446179eb7619/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/liuteng/Desktop/D/workspace-xixiwo/TestTinkerDemo/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/liuteng/.android/build-cache/1e87f1f268729c31b1e727021bd3446179eb7619/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/res/merged/release/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/liuteng/Desktop/D/workspace-liuteng/CCEnglish-Android/library/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/anim-v21/design_appbar_state_list_animator.xml"
     }
 ]

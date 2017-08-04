@@ -3,6 +3,7 @@ package com.android.baseline.util;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.TextUtils;
 
 import com.android.baseline.framework.db.BaseDAO;
 
@@ -15,7 +16,8 @@ import rx.schedulers.Schedulers;
 /**
  * key-value数据库
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-2-20]
  */
 public class KVDBHelper {
     public static final String TABLE_NAME = "key_value";
@@ -741,7 +743,7 @@ public class KVDBHelper {
      * @return
      */
     private static String wrapKey(String key) {
-        return keyPrefix + "_" + key;
+        return !TextUtils.isEmpty(keyPrefix)? (keyPrefix + "_" + key) : key;
     }
 
     public interface ResultListener<T> {

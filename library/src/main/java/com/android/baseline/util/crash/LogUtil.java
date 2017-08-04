@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 
 /**
  * Crash日志保存至SD卡
- * @author liuteng
+ * @author hiphonezhu@gmail.com
  */
 public class LogUtil {
 
@@ -48,17 +48,19 @@ public class LogUtil {
      * @param tag
      * @param e
      */
-    public static void e(String tag, Throwable e) {
+    static void e(String tag, Throwable e) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(baos);
         e.printStackTrace(ps);
         String errorMsg = new String(baos.toByteArray());
+
         if (BuildConfig.DEBUG) { // debug模式打印到LogCat
             Log.e(tag, errorMsg);
         } else { // Release模式存储到SD卡
             storeLog(tag, errorMsg + LINE_SEPARATOR + LINE_SEPARATOR + collectClientInfo());
         }
     }
+
 
     /**
      * 手机设备信息

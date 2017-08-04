@@ -12,6 +12,7 @@ import com.android.baseline.AppDroid;
 import com.android.baseline.R;
 import com.android.baseline.framework.ui.activity.base.BaseFragment;
 import com.android.baseline.framework.ui.activity.base.UIInterface;
+import com.android.baseline.framework.ui.adapter.page.PageWrapper;
 import com.android.baseline.framework.ui.view.LoadingView;
 import com.jph.takephoto.app.TakePhoto;
 import com.jph.takephoto.app.TakePhotoImpl;
@@ -22,12 +23,15 @@ import com.jph.takephoto.permission.InvokeListener;
 import com.jph.takephoto.permission.PermissionManager;
 import com.jph.takephoto.permission.TakePhotoInvocationHandler;
 
+import java.util.List;
+
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 /**
  * 基类Fragment
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-10-27]
  */
 public class BasicFragment extends BaseFragment implements TakePhoto.TakeResultListener,InvokeListener {
     /**
@@ -43,7 +47,6 @@ public class BasicFragment extends BaseFragment implements TakePhoto.TakeResultL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getTakePhoto().onCreate(savedInstanceState);
         AppDroid.getInstance().uiStateHelper.addFragment(this);
     }
 
@@ -159,11 +162,24 @@ public class BasicFragment extends BaseFragment implements TakePhoto.TakeResultL
      *
      * @param message 字符串
      */
-    public void showToast(String message) {
+    public void showToast(CharSequence message) {
         if (!isVisible()) {
             return;
         }
         uiInterface.showToast(message);
+    }
+
+    /**
+     * 分页查询空数据提示语
+     * @param pageWrapper
+     * @param source
+     * @param <T>
+     */
+    public <T> void showPagingEmptyToast(PageWrapper pageWrapper, List<T> source) {
+        if (!isVisible()) {
+            return;
+        }
+        uiInterface.showPagingEmptyToast(pageWrapper, source);
     }
 
     public void showProgress(String message) {
@@ -258,6 +274,7 @@ public class BasicFragment extends BaseFragment implements TakePhoto.TakeResultL
     protected boolean checkResponse(Message msg, String successTip, String errorTip, boolean tipError) {
         return ((BasicActivity) uiInterface).checkResponse(msg, successTip, errorTip, tipError);
     }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         getTakePhoto().onSaveInstanceState(outState);

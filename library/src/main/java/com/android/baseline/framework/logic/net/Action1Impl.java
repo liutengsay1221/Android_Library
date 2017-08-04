@@ -7,7 +7,8 @@ import rx.functions.Action1;
 /**
  * Action1 实现类, 可以在这里做一些统一处理
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/11/14 17:55]
  */
 
 public abstract class Action1Impl<T> implements Action1<InfoResult<T>> {

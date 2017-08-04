@@ -6,6 +6,7 @@ import android.os.Environment;
 import com.jph.takephoto.app.TakePhoto;
 import com.jph.takephoto.compress.CompressConfig;
 import com.jph.takephoto.model.CropOptions;
+import com.jph.takephoto.model.LubanOptions;
 import com.jph.takephoto.model.TakePhotoOptions;
 
 import java.io.File;
@@ -18,11 +19,12 @@ import java.io.File;
 public class CapturePhotoHelper {
     /**
      * 选择照片
+     *
      * @param takePhoto
      * @param isCompress 是否压缩
-     * @param from 0 相册 1相机
-     * @param limit 选择张数
-     * @param isCrop 是否裁剪
+     * @param from       0 相册 1相机
+     * @param limit      选择张数
+     * @param isCrop     是否裁剪
      */
     public void onClick(TakePhoto takePhoto, boolean isCompress, int from, int limit, boolean isCrop) {
         File file = new File(Environment.getExternalStorageDirectory(), "/temp/" + System.currentTimeMillis() + ".jpg");
@@ -90,11 +92,13 @@ public class CapturePhotoHelper {
         int height = 800;
         boolean showProgressBar = false;
         boolean enableRawFile = true;
-        CompressConfig config = new CompressConfig.Builder()
+        LubanOptions option = new LubanOptions.Builder()
+                .setMaxHeight(height)
+                .setMaxWidth(width)
                 .setMaxSize(maxSize)
-                .setMaxPixel(width >= height ? width : height)
-                .enableReserveRaw(enableRawFile)
                 .create();
+        CompressConfig config = CompressConfig.ofLuban(option);
+        config.enableReserveRaw(enableRawFile);
         takePhoto.onEnableCompress(config, showProgressBar);
     }
 }

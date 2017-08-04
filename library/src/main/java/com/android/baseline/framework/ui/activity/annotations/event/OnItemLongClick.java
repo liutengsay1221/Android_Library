@@ -8,7 +8,8 @@ import java.lang.annotation.Target;
 /**
  * item长按事件注解
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-9-19]
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

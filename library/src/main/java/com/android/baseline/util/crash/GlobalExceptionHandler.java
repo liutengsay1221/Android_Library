@@ -3,7 +3,8 @@ package com.android.baseline.util.crash;
 /**
  * 全局异常处理
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [2014-6-25]
  */
 public final class GlobalExceptionHandler implements Thread.UncaughtExceptionHandler {
 
@@ -25,7 +26,6 @@ public final class GlobalExceptionHandler implements Thread.UncaughtExceptionHan
     @Override
     public void uncaughtException(final Thread thread, final Throwable throwable) {
         if (!handleException(throwable) && defaultHandler != null) {
-            String str = throwable.getMessage();
             defaultHandler.uncaughtException(thread, throwable);
         }
     }
@@ -37,7 +37,6 @@ public final class GlobalExceptionHandler implements Thread.UncaughtExceptionHan
      */
     private boolean handleException(final Throwable throwable) {
         try {
-            throwable.printStackTrace();
             LogUtil.e("UncaughtException", throwable);
             return true;
         } catch (Exception e) {

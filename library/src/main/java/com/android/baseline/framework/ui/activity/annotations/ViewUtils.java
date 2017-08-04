@@ -1,21 +1,24 @@
 package com.android.baseline.framework.ui.activity.annotations;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 import android.app.Activity;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.CompoundButton;
 
+import com.android.baseline.framework.ui.activity.annotations.event.OnCheckedChange.OnCheckedChanged;
 import com.android.baseline.framework.ui.activity.annotations.event.OnClick;
 import com.android.baseline.framework.ui.activity.annotations.event.OnItemClick;
 import com.android.baseline.framework.ui.activity.annotations.event.OnItemLongClick;
 import com.android.baseline.framework.ui.activity.annotations.event.OnLongClick;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 /**
  * 利用注解实现View初始化和事件绑定
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-9-15]
  */
 public class ViewUtils {
     /**
@@ -96,6 +99,8 @@ public class ViewUtils {
                     setOnItemClickListener(classObj, viewFinder, method);
                 } else if (method.isAnnotationPresent(OnItemLongClick.class)) {
                     setOnItemLongClickListener(classObj, viewFinder, method);
+                } else if (method.isAnnotationPresent(OnCheckedChanged.class)) {
+                    setOnCheckedChangeListener(classObj, viewFinder, method);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -183,4 +188,23 @@ public class ViewUtils {
         }
     }
 
+    /**
+     * checkbox选中事件
+     *
+     * @param classObj
+     * @param viewFinder
+     * @param method
+     */
+    private static void setOnCheckedChangeListener(Object classObj, ViewFinder viewFinder, Method method) {
+        OnCheckedChanged onCheckedChanged = method.getAnnotation(OnCheckedChanged.class);
+        int[] ids = onCheckedChanged.value();
+        if (ids != null) {
+            for (int id : ids) {
+                View view = viewFinder.findViewById(id);
+                if (view != null && view instanceof CompoundButton) {
+                    ((CompoundButton) view).setOnCheckedChangeListener(new EventListener(classObj, method.getName()));
+                }
+            }
+        }
+    }
 }

@@ -1,12 +1,9 @@
 package com.android.baseline.framework.logic.net;
 
-import android.util.Log;
-
-import com.android.baseline.framework.logic.InfoResult;
-import com.android.baseline.util.APKUtil;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
@@ -26,7 +23,8 @@ import retrofit2.Retrofit;
 /**
  * GsonConverterFactory
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/12/21 19:24]
  */
 
 public final class GsonConverterFactoryPlus extends Converter.Factory {
@@ -79,16 +77,12 @@ class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
 
     @Override
     public T convert(ResponseBody value) throws IOException {
+//        JsonReader jsonReader = gson.newJsonReader(value.charStream());
         try {
+//            return adapter.read(jsonReader);
             // 统一处理原始数据
             String valueStr = value.string();
-            Log.e("服务器返回JSON", valueStr);
-            InfoResult infoResult = (InfoResult) adapter.fromJson(valueStr);
-            if (infoResult.getCode().equals(APKUtil.TOKEN_TIMEOUT_CODE) || infoResult.getCode().equals(APKUtil.TOKEN_GONE)) {
-                throw new IllegalArgumentException("token_timeout");//异常类型可以自己定义
-            } else {
-                return adapter.fromJson(valueStr);
-            }
+            return adapter.fromJson(valueStr);
         } finally {
             value.close();
         }

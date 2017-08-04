@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * 类型为集合
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2016/06/24 10:30]
  */
 public class ListEntry<T> implements Serializable{
     private int count;

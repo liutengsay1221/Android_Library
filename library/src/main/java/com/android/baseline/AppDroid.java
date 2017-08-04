@@ -6,11 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.android.baseline.framework.ui.util.UIStateHelper;
 import com.android.baseline.util.crash.GlobalExceptionHandler;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * App application
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2013-5-3]
  */
 public class AppDroid extends Application {
     private static AppDroid sInstance;
@@ -20,8 +22,9 @@ public class AppDroid extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-        Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler());
+//        Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler());
         uiStateHelper = new UIStateHelper();
+        Fresco.initialize(this);
     }
 
     public static AppDroid getInstance() {

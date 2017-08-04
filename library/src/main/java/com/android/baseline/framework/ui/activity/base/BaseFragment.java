@@ -1,6 +1,7 @@
 package com.android.baseline.framework.ui.activity.base;
 
 import android.os.Message;
+import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -18,7 +19,8 @@ import org.greenrobot.eventbus.ThreadMode;
 /**
  * 基类Fragment, 提供业务逻辑的处理和深层的UI处理
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2015-4-1]
  */
 public abstract class BaseFragment extends Fragment {
     private View mView;
@@ -40,6 +42,26 @@ public abstract class BaseFragment extends Fragment {
         mView = view;
         afterSetContentView(view);
         return view;
+    }
+
+    /**
+     * findViewById
+     * @param id
+     * @param <T>
+     * @return
+     */
+    public <T extends View> T findViewById(@IdRes int id) {
+        return (T)mView.findViewById(id);
+    }
+
+    /**
+     * findViewWithTag
+     * @param tag
+     * @param <T>
+     * @return
+     */
+    public <T extends View> T findViewWithTag(Object tag) {
+        return (T)mView.findViewWithTag(tag);
     }
 
     com.android.baseline.framework.ui.activity.base.helper.LogicHelper logicHelper = new com.android.baseline.framework.ui.activity.base.helper.LogicHelper();

@@ -11,7 +11,8 @@ import android.app.Activity;
 /**
  * 维护Activity和Fragment状态
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-12-15]
  */
 public class UIStateHelper {
     /**

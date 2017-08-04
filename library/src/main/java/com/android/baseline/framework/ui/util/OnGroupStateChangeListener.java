@@ -5,7 +5,8 @@ import android.widget.ExpandableListView;
 /**
  * 分组ListView展开某一个自动关闭其他
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-12-16]
  */
 public class OnGroupStateChangeListener implements ExpandableListView.OnGroupExpandListener, ExpandableListView.OnGroupCollapseListener {
     ExpandableListView expandableListView;

@@ -8,7 +8,8 @@ import java.util.List;
 /**
  * Task帮助类
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/8/17 14:58]
  */
 public class TaskHelper {
     private List<Task> tasks = new ArrayList<Task>(); // 存储BaseLogic

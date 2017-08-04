@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Android-BaseLine</string>
+    <string name="app_name">CC英语</string>
     <string name="loading_text">正在加载, 请稍候...</string>
     <string name="loading_failure">点击屏幕, 重新加载</string>
     <string name="requesting_failure">请求失败, 请稍后重试</string>
+    <string name="network_error">网络连接异常，请检查网络设置</string>
+    <string name="no_data">空空如也~</string>
+    <string name="nomore_data">没有更多数据了~</string>
 
     <string name="permission_desc_text">需要%1$s的权限, 但此权限已被禁止, 你可以到设置中更改</string>
     <string name="settings">去设置</string>

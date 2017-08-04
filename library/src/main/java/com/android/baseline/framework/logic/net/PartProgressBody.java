@@ -11,7 +11,9 @@ import okio.BufferedSink;
 
 /**
  * Part request body with progress feedback
- * @author liuteng
+ *
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/9/27 09:13]
  */
 
 public abstract class PartProgressBody {

@@ -1,9 +1,14 @@
 package com.android.baseline.framework.ui.activity.base;
 
+import com.android.baseline.framework.ui.adapter.page.PageWrapper;
+
+import java.util.List;
+
 /**
  * UI接口定义
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2014-11-3]
  */
 public interface UIInterface {
     /**
@@ -11,7 +16,15 @@ public interface UIInterface {
      *
      * @param message
      */
-    void showToast(String message);
+    void showToast(CharSequence message);
+
+    /**
+     * 分页查询空数据提示语
+     * @param pageWrapper
+     * @param source
+     * @param <T>
+     */
+    <T> void showPagingEmptyToast(PageWrapper pageWrapper, List<T> source);
 
     /**
      * 显示进度条, 可取消

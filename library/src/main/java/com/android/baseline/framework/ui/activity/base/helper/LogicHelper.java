@@ -8,7 +8,8 @@ import java.util.List;
 /**
  * Logic帮助类
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/8/17 14:58]
  */
 public class LogicHelper {
     private List<EventLogic> logics = new ArrayList<EventLogic>(); // 存储BaseLogic

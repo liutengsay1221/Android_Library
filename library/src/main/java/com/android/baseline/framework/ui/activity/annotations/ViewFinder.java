@@ -6,7 +6,8 @@ import android.view.View;
 /**
  * View查找器
  *
- * @author liuteng]
+ * @author hiphonezhu@gmail.com
+ * @version [OApp, 2014-10-31]
  */
 public class ViewFinder {
     private View view;

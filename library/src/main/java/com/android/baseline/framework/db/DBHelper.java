@@ -10,7 +10,8 @@ import com.android.baseline.util.KVDBHelper;
 /**
  * 数据库轻量级操作封装
  *
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 2013-3-18]
  */
 public class DBHelper {
     private DataBaseHelper dbHelper;
@@ -79,13 +80,7 @@ public class DBHelper {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.beginTransaction();
-            try {
-                AppDroid.getInstance().onDBUpgrade(db, oldVersion, newVersion);
-            } catch (Exception e) {
-            } finally {
-                db.endTransaction();
-            }
+            AppDroid.getInstance().onDBUpgrade(db, oldVersion, newVersion);
         }
     }
 }

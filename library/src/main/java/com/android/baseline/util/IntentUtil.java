@@ -8,7 +8,8 @@ import android.support.v4.app.Fragment;
 
 /**
  * Intent跳转工具类
- * @author liuteng
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 17/1/9 14:56]
  */
 
 public class IntentUtil {

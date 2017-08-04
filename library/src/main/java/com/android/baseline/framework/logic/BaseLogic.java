@@ -1,8 +1,8 @@
 package com.android.baseline.framework.logic;
 
 import com.android.baseline.framework.logic.net.RetrofitManager;
-import com.android.baseline.util.APKUtil;
 
+import okhttp3.Interceptor;
 import retrofit2.Retrofit;
 import rx.Observable;
 import rx.Subscriber;
@@ -11,7 +11,9 @@ import rx.schedulers.Schedulers;
 
 /**
  * '数据'模块统一出口, Retrofit基本封装
- * @author liuteng
+ *
+ * @author hiphonezhu@gmail.com
+ * @version [Android-BaseLine, 16/9/3 11:07]
  */
 public abstract class BaseLogic extends EventLogic {
     protected Retrofit retrofit;
@@ -23,7 +25,7 @@ public abstract class BaseLogic extends EventLogic {
      */
     public BaseLogic(Object subscriber) {
         super(subscriber);
-        retrofit = RetrofitManager.getInstance().getRetrofit(getBaseUrl());
+        retrofit = RetrofitManager.getInstance().getRetrofit(getBaseUrl(), networkInterceptor());
     }
 
     /**
@@ -55,7 +57,9 @@ public abstract class BaseLogic extends EventLogic {
                     @Override
                     public void onError(Throwable e) {
                         // 无网络、解析报错、404\500
-                        onResult(what, e);
+                        InfoResult<Throwable> infoResult = new InfoResult<Throwable>(InfoResult.INNER_ERROR_CODE);
+                        infoResult.setData(e);
+                        onResult(what, infoResult);
                     }
 
                     @Override
@@ -70,7 +74,13 @@ public abstract class BaseLogic extends EventLogic {
      *
      * @return
      */
-    protected String getBaseUrl() {
-        return APKUtil.BASE_URL;
+    protected abstract String getBaseUrl();
+
+    /**
+     * 网络拦截器
+     * @return
+     */
+    protected Interceptor networkInterceptor() {
+        return null;
     }
 }

@@ -7,5 +7,4 @@
         原理就是给这个布局加一个paddingTop值为状态栏高度的属性(4.4以下这个paddingTop的值为0, 所以兼容没有问题)-->
         <item name="android:windowTranslucentStatus">true</item>
     </style>
-
 </resources>
